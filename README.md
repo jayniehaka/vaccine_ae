@@ -2,6 +2,8 @@
 
 A heatmap of vaccine adverse events using [ggplot2](https://ggplot2.tidyverse.org/).
 
+!(vaccine_systematic_AEs.png?raw=true)
+
 Data is from a paper published in Nature titled [Comparative systematic review and meta-analysis of reactogenicity, immunogenicity and efficacy of vaccines against SARS-CoV-2](https://www.nature.com/articles/s41541-021-00336-1).
 
 Inspired by the following [bar chart](https://www.nature.com/articles/s41541-021-00336-1/figures/4):
