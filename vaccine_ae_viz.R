@@ -4,8 +4,6 @@ library(tidyverse)
 library(scales)
 library(ggthemes)
 
-setwd("~/Documents/Projects/vaccine_ae")
-
 # function to get data from csv, tidy and reshape
 process_ae_data <- function(filename) {
   read_csv(filename, skip = 1, trim_ws = TRUE,
@@ -50,7 +48,7 @@ my_heatmap_theme <- theme_tufte(base_size = 15, base_family = "Georgia") +
         plot.caption = element_text(hjust = 0, margin=margin(30,0,0,0))) 
 
 # get local AE data
-local_ae_data <- process_ae_data("local_adverse_effects.csv")
+local_ae_data <- process_ae_data("local_adverse_events.csv")
 
 # draw the local AEs heatmap
 local_ae_heatmap <- ggplot(local_ae_data, aes(y = symptom.name, x = vaccine.name,
@@ -66,7 +64,7 @@ local_ae_heatmap <- ggplot(local_ae_data, aes(y = symptom.name, x = vaccine.name
   my_heatmap_theme
 
 # get systematic AE data
-systematic_ae_data <- process_ae_data("systematic_adverse_effects.csv")
+systematic_ae_data <- process_ae_data("systematic_adverse_events.csv")
 
 # draw the systematic AEs heatmap
 systematic_ae_heatmap <- ggplot(systematic_ae_data, aes(y = symptom.name, x = vaccine.name, fill = symptom.percentage_of_patients)) +
